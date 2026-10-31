@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<section class="hero">
+  <div class="hero-kicker"><span class="status-dot"></span> PERSONAL SECURITY JOURNAL</div>
+  <h1>{{ site.welcome | escape }}</h1>
+  <p>{{ site.description | escape }}</p>
+  <div class="hero-links">
+    <a class="button primary" href="{{ '/about/' | relative_url }}">소개 보기 <span aria-hidden="true">↗</span></a>
+    <a class="button secondary" href="#recent-posts">최근 기록 <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="hero-decoration" aria-hidden="true"><span>01</span><span>LEARN</span><span>BUILD</span><span>SHARE</span></div>
+</section>
+
+<section class="section">
+  <div class="section-heading"><div><p class="eyebrow">EXPLORE</p><h2>카테고리</h2></div><p>공부와 활동을 6가지 영역으로 정리합니다.</p></div>
+  <div class="category-grid">
+    <a class="category-card" href="{{ '/development/' | relative_url }}"><span class="category-no">01 / ENGINEERING</span><strong>개발</strong><span class="category-explainer">코딩 · 프로젝트 · 구현 기록</span><span class="card-arrow">↗</span></a>
+    <a class="category-card" href="{{ '/ctf-wargame/' | relative_url }}"><span class="category-no">02 / CHALLENGES</span><strong>CTF/Wargame</strong><span class="category-explainer">문제 풀이 · 분석 · Write-up</span><span class="card-arrow">↗</span></a>
+    <a class="category-card" href="{{ '/bug-bounty/' | relative_url }}"><span class="category-no">03 / SECURITY</span><strong>Bug Bounty</strong><span class="category-explainer">취약점 학습 · 검증 · 보안 연구</span><span class="card-arrow">↗</span></a>
+    <a class="category-card" href="{{ '/tech-docs/' | relative_url }}"><span class="category-no">04 / NOTES</span><strong>블로그/기술문서</strong><span class="category-explainer">공식 문서 · 기술 정리 · 튜토리얼</span><span class="card-arrow">↗</span></a>
+    <a class="category-card" href="{{ '/papers-conferences/' | relative_url }}"><span class="category-no">05 / RESEARCH</span><strong>논문/컨퍼런스</strong><span class="category-explainer">논문 리뷰 · 세미나 · 발표</span><span class="card-arrow">↗</span></a>
+    <a class="category-card" href="{{ '/competitions-certificates/' | relative_url }}"><span class="category-no">06 / EXPERIENCE</span><strong>공모전/자격증</strong><span class="category-explainer">대회 · 해커톤 · 자격증 준비</span><span class="card-arrow">↗</span></a>
+  </div>
+</section>
+
+<section class="section" id="recent-posts">
+  <div class="section-heading"><div><p class="eyebrow">LATEST UPDATES</p><h2>최근 기록</h2></div><p>새로 작성한 글이 자동으로 추가됩니다.</p></div>
+  <div class="post-list">
+  {% for post in site.posts limit: 8 %}
+    <a class="post-row" href="{{ post.url | relative_url }}">
+      <div><span class="post-date">{{ post.date | date: '%Y.%m.%d' }}</span><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 125 | escape }}</p></div>
+      <span class="post-arrow">↗</span>
+    </a>
+  {% else %}
+    <p class="empty-message">아직 글이 없습니다. 첫 번째 기록을 작성해 보세요!</p>
+  {% endfor %}
+  </div>
+</section>

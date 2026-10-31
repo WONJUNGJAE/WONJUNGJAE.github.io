@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="theme-color" content="#0a1120">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<div class="page-shell">
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="홈으로">
+      <span class="brand-symbol" aria-hidden="true">&gt;_</span>
+      <span>{{ site.title | escape }}</span>
+    </a>
+    <nav class="top-nav" aria-label="주 메뉴">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+      {% if site.github_username != '' %}<a href="https://github.com/{{ site.github_username | escape }}" target="_blank" rel="noopener noreferrer">GitHub ↗</a>{% endif %}
+    </nav>
+  </header>
+
+  <nav class="category-nav" aria-label="카테고리">
+    <a href="{{ '/development/' | relative_url }}">개발</a>
+    <a href="{{ '/ctf-wargame/' | relative_url }}">CTF/Wargame</a>
+    <a href="{{ '/bug-bounty/' | relative_url }}">Bug Bounty</a>
+    <a href="{{ '/tech-docs/' | relative_url }}">블로그/기술문서</a>
+    <a href="{{ '/papers-conferences/' | relative_url }}">논문/컨퍼런스</a>
+    <a href="{{ '/competitions-certificates/' | relative_url }}">공모전/자격증</a>
+  </nav>
+
+  <main class="main-content" id="main-content">{{ content }}</main>
+
+  <footer class="site-footer">
+    <span>© {{ 'now' | date: '%Y' }} {{ site.author | escape }}</span>
+    <span>Built with GitHub Pages &amp; Jekyll</span>
+  </footer>
+</div>
+</body>
+</html>

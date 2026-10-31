@@ -1,0 +1,15 @@
+# 블로그의 기본 정보를 이 파일에서 수정하세요.
+title: "Security Log"
+author: "Your Name"
+description: "개발과 정보보안 공부, CTF 도전과 활동을 기록하는 공간"
+welcome: "배운 것을 기록하고, 기록을 통해 성장합니다."
+github_username: "" # 실제 GitHub 사용자 이름을 따옴표 안에 넣으세요 (예: seika123)
+
+lang: ko-KR
+timezone: Asia/Seoul
+markdown: kramdown
+permalink: /posts/:title/
+# 사용자 github.io 저장소라면 baseurl은 빈 문자열 그대로 두세요.
+baseurl: ""
+exclude:
+  - README.md
