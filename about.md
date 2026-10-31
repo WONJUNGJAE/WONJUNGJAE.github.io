@@ -6,8 +6,8 @@ permalink: /about/
 
 <section class="inner-hero">
   <p class="eyebrow">ABOUT ME</p>
-  <h1>안녕하세요, <span class="accent-text">{{ site.author | escape }}</span>입니다.</h1>
-  <p>새로운 기술을 배우고, 직접 실습하며, 배운 내용을 글로 정리합니다.</p>
+  <h1>안녕하세요, <span class="accent-text">{{ site.author | escape }}</span>입니다.성실함 및 꾸준함 하나로? 두개로. 최선을 다하겠습니다</h1>
+  
 </section>
 
 <div class="about-grid">
@@ -15,9 +15,9 @@ permalink: /about/
     <p class="eyebrow">INTERESTS</p>
     <h2>관심 분야</h2>
     <ul>
-      <li>정보보안과 취약점 분석</li>
-      <li>시스템 및 네트워크</li>
-      <li>개발과 자동화</li>
+      <li>게임핵</li>
+      <li>리버싱 자동화 프로그램 만들어보기</li>
+      <li>버그바운티 따내기</li>
       <li>CTF / Wargame</li>
     </ul>
   </section>
@@ -28,4 +28,4 @@ permalink: /about/
   </section>
 </div>
 
-<p class="about-footnote">✏️ <strong>수정 안내:</strong> 이 페이지는 저장소의 <code>about.md</code> 파일을 편집하면 자유롭게 바꿀 수 있습니다.</p>
+
