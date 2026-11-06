@@ -85,7 +85,18 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 /* 제목 계층 */
 h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance; }
 
-.hero { padding: 6rem 0 5rem; }
+.hero { position: relative; padding: 6rem 0 5rem; }
+
+/* 자기장: 큰 원 안에 다음 안전지대 원 */
+.zone {
+  position: absolute;
+  top: 3rem;
+  right: -1rem;
+  width: 17rem;
+  height: 17rem;
+  color: var(--muted);
+  pointer-events: none;
+}
 
 .hero h1 {
   font-size: clamp(2rem, 5.2vw, 3rem);
@@ -234,6 +245,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
   html { font-size: 16px; }
   .page-shell { padding: 0 1.1rem; }
   .hero { padding: 4rem 0 3.5rem; }
+  .zone { width: 9rem; height: 9rem; top: 1rem; right: -2rem; opacity: 0.6; }
   .category-list a, .post-row { grid-template-columns: 1fr; gap: 0.15rem; }
   .site-footer { flex-direction: column; gap: 0.25rem; }
 }
