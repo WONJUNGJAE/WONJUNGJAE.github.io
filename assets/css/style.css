@@ -41,6 +41,21 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
   padding: 0 1.5rem;
 }
 
+/* 이동 링크 공통 호버: 오른쪽으로 밀리며 주홍색 */
+.brand, .top-nav a, .category-nav a, .category-list strong,
+.post-row h3, .text-link {
+  display: inline-block;
+  transition: transform .2s ease-out, color .2s;
+}
+
+.brand:hover, .top-nav a:hover, .category-nav a:hover, .text-link:hover,
+.category-list a:hover strong, .post-row:hover h3 {
+  color: var(--signal);
+  transform: translateX(6px);
+}
+
+.post-body a:hover { color: var(--signal); }
+
 /* 머리글 */
 .site-header {
   display: flex;
@@ -63,7 +78,6 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
   color: var(--muted);
 }
 
-.top-nav a:hover { color: var(--text); }
 .top-nav a[aria-current="page"] { color: var(--text); text-decoration: underline; text-underline-offset: 6px; }
 
 .category-nav {
@@ -77,7 +91,6 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
   color: var(--muted);
 }
 
-.category-nav a:hover { color: var(--text); }
 .category-nav a[aria-current="page"] { color: var(--signal); font-weight: 500; }
 
 .main-content { padding-bottom: 6rem; }
@@ -87,7 +100,18 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
 
 .hero { position: relative; padding: 6rem 0 5rem; }
 
-/* 자기장: 큰 원 안에 다음 안전지대 원 */
+/* 자기장: 큰 원 안에 다음 안전지대 원, 접속 시 한 번 수축 */
+.zone-next {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: zone-shrink 2.8s cubic-bezier(.3, .1, .2, 1) 0.4s both;
+}
+
+@keyframes zone-shrink {
+  from { transform: scale(1.7); }
+  to   { transform: scale(1); }
+}
+
 .zone {
   position: absolute;
   top: 3rem;
@@ -95,7 +119,6 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
   width: 17rem;
   height: 17rem;
   color: var(--muted);
-  pointer-events: none;
 }
 
 .hero h1 {
@@ -119,7 +142,6 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
   text-underline-offset: 5px;
   text-decoration-thickness: 1px;
 }
-.text-link:hover { text-decoration-thickness: 2px; }
 
 /* 구역 */
 .section { padding-bottom: 4.5rem; }
@@ -150,7 +172,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
 
 .category-list strong { font-weight: 700; }
 .category-list span { color: var(--muted); font-size: 0.92rem; }
-.category-list a:hover strong { color: var(--signal); }
+
 
 /* 글 목록 */
 .post-list { border-top: 1px solid var(--rule); }
@@ -171,7 +193,7 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
 }
 
 .post-row h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
-.post-row:hover h3 { text-decoration: underline; text-underline-offset: 5px; }
+
 .post-row p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
 .empty-message { color: var(--muted); padding: 1.5rem 0; margin: 0; }
@@ -248,4 +270,12 @@ h1, h2, h3 { font-family: var(--font-head); line-height: 1.4; text-wrap: balance
   .zone { width: 9rem; height: 9rem; top: 1rem; right: -2rem; opacity: 0.6; }
   .category-list a, .post-row { grid-template-columns: 1fr; gap: 0.15rem; }
   .site-footer { flex-direction: column; gap: 0.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zone-next { animation: none; }
+  .brand, .top-nav a, .category-nav a, .category-list strong,
+  .post-row h3, .text-link { transition: none; }
+  .brand:hover, .top-nav a:hover, .category-nav a:hover, .text-link:hover,
+  .category-list a:hover strong, .post-row:hover h3 { transform: none; }
 }
