@@ -1,8 +1,7 @@
 ---
 layout: category
 title: CTF/Wargame
-description: "CTF 문제 풀이, 워게임 실습과 Write-up을 기록합니다."
+description: "CTF와 Wargame 문제 풀이, 복습, Write-up"
 category_key: ctf
-category_number: "02"
 permalink: /ctf-wargame/
 ---

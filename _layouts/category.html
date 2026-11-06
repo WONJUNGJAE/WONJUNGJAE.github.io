@@ -2,20 +2,21 @@
 layout: default
 ---
 <section class="inner-hero">
-  <p class="eyebrow">CATEGORY / {{ page.category_number | escape }}</p>
   <h1>{{ page.title | escape }}</h1>
   <p>{{ page.description | escape }}</p>
-  <a class="back-link" href="{{ '/' | relative_url }}">← 전체 카테고리로</a>
 </section>
-<section class="section compact-section"><div class="section-heading"><div><p class="eyebrow">POSTS</p><h2>글 목록</h2></div></div>
+<section class="section">
   <div class="post-list">
     {% assign any_posts = false %}
     {% for post in site.posts %}
       {% if post.categories contains page.category_key %}
         {% assign any_posts = true %}
-        <a class="post-row" href="{{ post.url | relative_url }}"><div><span class="post-date">{{ post.date | date: '%Y.%m.%d' }}</span><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 130 | escape }}</p></div><span class="post-arrow">↗</span></a>
+        <a class="post-row" href="{{ post.url | relative_url }}">
+          <span class="post-date">{{ post.date | date: '%Y.%m.%d' }}</span>
+          <div><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 100 | escape }}</p></div>
+        </a>
       {% endif %}
     {% endfor %}
-    {% unless any_posts %}<p class="empty-message">아직 작성된 글이 없습니다. 앞으로 이 카테고리에 기록을 채워 나갈 예정입니다.</p>{% endunless %}
+    {% unless any_posts %}<p class="empty-message">아직 글 없음</p>{% endunless %}
   </div>
 </section>

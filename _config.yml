@@ -1,8 +1,8 @@
 # 블로그의 기본 정보를 이 파일에서 수정하세요.
-title: "?!?!?!?!HSPACE Knights Frontier 블로그?!?!?!?!"
+title: "BlueZ0ne"
 author: "원정재"
-description: "나의 공부 기록지"
-welcome: "인생 2회차 과거로 돌아온거니까 더 이상의 후회는 없다."
+description: "Knights Frontier 3기 활동과 보안 공부의 기록"
+welcome: "인생 2회차, 후회 없는 공부의 기록"
 github_username: "WONJUNGJAE" # 실제 GitHub 사용자 이름을 따옴표 안에 넣으세요 (예: seika123)
 
 lang: ko-KR

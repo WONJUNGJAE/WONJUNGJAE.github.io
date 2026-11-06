@@ -3,7 +3,7 @@ layout: post
 title: "블로그를 시작하며"
 date: 2026-10-31 09:00:00 +0900
 categories: [development]
-description: "Knights Frontier 3기 활동을 계기로 개인 기술 블로그를 시작합니다."
+description: "Knights Frontier 3기 활동을 계기로 시작한 개인 기술 블로그"
 ---
 
 안녕하세요! **Knights Frontier 3기 활동**을 계기로 학습 과정을 기록할 블로그를 만들었습니다.
@@ -19,5 +19,3 @@ description: "Knights Frontier 3기 활동을 계기로 개인 기술 블로그�
 ## 기록하는 이유
 
 배운 내용을 나만의 언어로 정리하면 이해가 더 깊어진다고 생각합니다. 완벽한 글보다는 **꾸준하게 배우고 개선하는 과정**을 남겨 보려고 합니다.
-
-> 이 글은 시작용 예시입니다. 실제로 블로그를 운영할 때는 나의 경험에 맞게 내용을 수정해 주세요.
